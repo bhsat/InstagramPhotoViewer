@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/roundView"
+        fresco:roundAsCircle="true"
+        fresco:actualImageScaleType="fitCenter"
+        fresco:placeholderImage="@drawable/gray_oval"
+        fresco:placeholderImageScaleType="fitCenter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="8dp"
+        android:text="New Text"
+        android:id="@+id/tvUser"
+        android:textColor="@color/blue_text"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/roundView"
+        android:layout_toEndOf="@+id/roundView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:text="New Text"
+        android:id="@+id/tvTime"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/light_gray_text"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"/>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:id="@+id/imageView"
+        fresco:actualImageScaleType="fitCenter"
+        fresco:placeholderImage="@drawable/gray_rectangle"
+        fresco:placeholderImageScaleType="fitCenter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/roundView" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="New Text"
+        android:id="@+id/tvUser2"
+        android:textColor="@color/blue_text"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/line"
+        android:layout_alignLeft="@+id/llComments"
+        android:layout_alignStart="@+id/llComments" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line"
+        android:background="@color/light_gray_separator_line"
+        android:layout_alignTop="@+id/tvLikes"
+        android:layout_alignRight="@+id/tvUser2"
+        android:layout_alignEnd="@+id/tvUser2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tvLikes"
+        android:textColor="@color/blue_text"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-medium"
+        android:drawableLeft="@drawable/ic_small_heart_filled"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignLeft="@+id/tvUser2"
+        android:layout_alignStart="@+id/tvUser2" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llComments"
+        android:layout_below="@+id/tvUser2"
+        android:layout_alignRight="@+id/tvTime"
+        android:layout_alignEnd="@+id/tvTime"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvComments"
+            android:textColor="@color/blue_text"
+            android:layout_marginTop="1dp"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-medium" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:id="@+id/btnComments"
+        android:layout_below="@+id/tvUser2"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:visibility="gone"
+        android:textColor="@color/light_gray_text" />
+
+    <ImageButton
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/iBtnHeart"
+        android:layout_above="@+id/tvUser2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/ic_heart"
+        android:background="@android:color/transparent"/>
+
+    <ImageButton
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:id="@+id/iBtnComment"
+        android:src="@drawable/ic_comment"
+        android:layout_alignTop="@+id/iBtnHeart"
+        android:layout_toRightOf="@+id/roundView"
+        android:layout_toEndOf="@+id/roundView"
+        android:background="@android:color/transparent"/>
+
+    <ImageButton
+        android:layout_width="8dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/iBtnDots"
+        android:src="@drawable/ic_more_dots"
+        android:layout_above="@+id/line"
+        android:layout_alignRight="@+id/tvTime"
+        android:layout_alignEnd="@+id/tvTime" />
+
+</RelativeLayout>
