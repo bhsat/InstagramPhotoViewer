@@ -10,6 +10,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
+import com.loopj.android.http.SyncHttpClient;
 
 import org.apache.http.Header;
 import org.json.JSONObject;
@@ -21,7 +22,9 @@ import org.scribe.builder.api.TwitterApi;
  */
 public class InstagramClient extends OAuthBaseClient {
 
+    private AsyncHttpClient syncClient = new SyncHttpClient();
 
+    private static final String apiUrl = "https://api.instagram.com/v1/media/popular?client_id=";
     private static final String feedUrl = "https://api.instagram.com/v1/users/self/feed";
     public static final Class<? extends Api> REST_API_CLASS = InstagramApi.class;
     public static final String REST_URL = "https://api.instagram.com/v1/";
@@ -35,10 +38,13 @@ public class InstagramClient extends OAuthBaseClient {
     }
 
     public void getPopularFeed(JsonHttpResponseHandler responseHandler) {
-        client.get(feedUrl, responseHandler);
+        RequestParams params = new RequestParams();
+        params.put("access_token", client.getAccessToken().getToken());
+        syncClient.get(apiUrl, params, responseHandler);
     }
 
     public void getComments(String mediaId, JsonHttpResponseHandler responseHandler) {
+        //AsyncHttpClient client = new AsyncHttpClient();
         String url = "https://api.instagram.com/v1/media/"+mediaId+"/comments?client_id=";
         client.get(url, responseHandler);
     }

@@ -250,5 +250,14 @@ public class InstagramPostsAdapter extends RecyclerView.Adapter<InstagramPostsAd
         return ssb;
     }
 
+    public void clear() {
+        posts.clear();
+        notifyDataSetChanged();
+    }
 
+    // Add a list of instagram posts
+    public void addAll(List<InstagramPost> list) {
+        posts.addAll(list);
+        notifyDataSetChanged();
+    }
 }

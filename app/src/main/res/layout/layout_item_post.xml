@@ -50,6 +50,7 @@
         fresco:placeholderImageScaleType="fitCenter"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
         android:layout_below="@+id/roundView" />
 
     <TextView
