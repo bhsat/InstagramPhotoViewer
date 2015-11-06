@@ -20,11 +20,18 @@ import android.widget.Toast;
 
 import com.codepath.instagram.R;
 import com.codepath.instagram.activities.InstagramPostsAdapter;
+import com.codepath.instagram.core.MainApplication;
 import com.codepath.instagram.helpers.SimpleVerticalSpacerItemDecoration;
+import com.codepath.instagram.helpers.Utils;
 import com.codepath.instagram.models.InstagramPost;
 import com.codepath.instagram.models.InstagramPostsWrapper;
+import com.codepath.instagram.networking.InstagramClient;
 import com.codepath.instagram.networking.InstagramIntentService;
 import com.codepath.instagram.persistence.InstagramClientDatabase;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -139,4 +146,5 @@ public class PostsFragment extends Fragment {
             }
         }
     };
+
 }

@@ -1,6 +1,9 @@
 # InstagramPhotoViewer
 Android bootcamp - assignments
 
+Assignment #5
+![Instagram Photo Viewer App - Part 5](https://github.com/bhsat/InstagramPhotoViewer/blob/master/InstagramPhotoViewer-Part5.gif)
+
 Assignment #4
 ![Instagram Photo Viewer App - Part 4](https://github.com/bhsat/InstagramPhotoViewer/blob/master/InstagramPhotoViewer-Part4.gif)
 

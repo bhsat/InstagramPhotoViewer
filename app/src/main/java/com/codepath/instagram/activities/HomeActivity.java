@@ -9,12 +9,15 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.codepath.instagram.R;
 import com.codepath.instagram.fragments.PostsFragment;
+import com.codepath.instagram.fragments.ProfileFragment;
 import com.codepath.instagram.fragments.SearchFragment;
 import com.codepath.instagram.fragments.SearchUsersResultFragment;
 import com.codepath.instagram.helpers.SimpleVerticalSpacerItemDecoration;
@@ -68,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         fragments.add(1, new SearchFragment());
         fragments.add(2, new PostsFragment());
         fragments.add(3, new PostsFragment());
-        fragments.add(4, new PostsFragment());
+        fragments.add(4, new ProfileFragment());
         HomeFragmentStatePagerAdapter adapter = new HomeFragmentStatePagerAdapter(getSupportFragmentManager(),
                 HomeActivity.this, fragments);
         viewPager.setAdapter(adapter);
@@ -77,6 +80,11 @@ public class HomeActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tlSlide);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setupWithViewPager(viewPager);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Sets the Toolbar to act as the ActionBar for this Activity window.
+        // Make sure the toolbar exists in the activity and is not null
+        setSupportActionBar(toolbar);
 
     }
 
